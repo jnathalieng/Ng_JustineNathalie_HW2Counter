@@ -1,0 +1,130 @@
+@use '../abstracts' as a;
+
+#content-con {
+    padding: 30px 0 50px;
+}
+
+.doc-section {
+    background-color: a.$white;
+    border: a.$border;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    transition:
+        background-color 0.2s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+
+    &#overview-section {
+        @include a.offset-shadow(a.$shadow-green, 8px);
+    }
+
+    &#works-section {
+        @include a.offset-shadow(a.$shadow-orange, 8px);
+    }
+
+    &#demo-section {
+        @include a.offset-shadow(a.$shadow-blue, 8px);
+    }
+
+    &#code-section {
+        @include a.offset-shadow(a.$shadow-pink, 8px);
+    }
+
+    &:hover {
+        background-color: a.$purple;
+        transform: translate(-4px, -4px);
+    }
+
+    &#overview-section:hover {
+        @include a.offset-shadow(a.$shadow-green, 12px);
+    }
+
+    &#works-section:hover {
+        @include a.offset-shadow(a.$shadow-orange, 12px);
+    }
+
+    &#demo-section:hover {
+        @include a.offset-shadow(a.$shadow-blue, 12px);
+    }
+
+    &#code-section:hover {
+        @include a.offset-shadow(a.$shadow-pink, 12px);
+    }
+}
+
+.section-label {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0 16px 20px;
+
+    .label-shadow {
+        position: absolute;
+        inset: 0;
+        background-color: a.$purple;
+        border: a.$border;
+        transform: translate(5px, 5px);
+        z-index: 0;
+    }
+
+    h2 {
+        position: relative;
+        background-color: a.$white;
+        border: a.$border;
+        padding: 7px 16px;
+        font-weight: 900;
+        font-size: 20px;
+        letter-spacing: 1px;
+        z-index: 1;
+    }
+}
+
+.section-copy {
+    padding: 0 20px 20px;
+
+    p,
+    li {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 10px;
+
+        @include a.tablet {
+            font-size: 15px;
+        }
+    }
+
+    ul {
+        margin-bottom: 12px;
+    }
+
+    pre {
+        background-color: a.$white;
+        border: a.$border;
+        padding: 14px 16px;
+        margin-bottom: 14px;
+        box-shadow: 6px 6px 0 a.$shadow-green;
+        overflow-x: auto;
+    }
+
+    code {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+}
+
+.mini-note {
+    display: inline-block;
+    font-size: 13px;
+    background-color: #f5f5f5;
+    padding: 4px 12px;
+    margin-bottom: 6px;
+    margin-right: 8px;
+}
+
+.code-title {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
