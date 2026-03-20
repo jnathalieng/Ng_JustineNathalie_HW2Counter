@@ -49,3 +49,8 @@
           url('#{$file-path}.woff2') format('woff2')
       }
   }
+
+  // shadows
+  @mixin offset-shadow($color, $size) {
+      box-shadow: $size $size 0 $color;
+}
