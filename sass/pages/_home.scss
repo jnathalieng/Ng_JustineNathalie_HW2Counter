@@ -1,12 +1,10 @@
-@use '../abstracts' as a;
-
 #content-con {
     padding: 30px 0 50px;
 }
 
 .doc-section {
-    background-color: a.$white;
-    border: a.$border;
+    background-color: $white;
+    border: $border;
     margin-top: 20px;
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -15,42 +13,20 @@
         transform 0.18s ease,
         box-shadow 0.18s ease;
 
-    &#overview-section {
-        @include a.offset-shadow(a.$shadow-green, 8px);
-    }
-
-    &#works-section {
-        @include a.offset-shadow(a.$shadow-orange, 8px);
-    }
-
-    &#demo-section {
-        @include a.offset-shadow(a.$shadow-blue, 8px);
-    }
-
-    &#code-section {
-        @include a.offset-shadow(a.$shadow-pink, 8px);
-    }
+    &#overview-section { @include offset-shadow($shadow-green, 8px); }
+    &#works-section    { @include offset-shadow($shadow-orange, 8px); }
+    &#demo-section     { @include offset-shadow($shadow-blue, 8px); }
+    &#code-section     { @include offset-shadow($shadow-pink, 8px); }
 
     &:hover {
-        background-color: a.$purple;
+        background-color: $purple;
         transform: translate(-4px, -4px);
     }
 
-    &#overview-section:hover {
-        @include a.offset-shadow(a.$shadow-green, 12px);
-    }
-
-    &#works-section:hover {
-        @include a.offset-shadow(a.$shadow-orange, 12px);
-    }
-
-    &#demo-section:hover {
-        @include a.offset-shadow(a.$shadow-blue, 12px);
-    }
-
-    &#code-section:hover {
-        @include a.offset-shadow(a.$shadow-pink, 12px);
-    }
+    &#overview-section:hover { @include offset-shadow($shadow-green, 12px); }
+    &#works-section:hover    { @include offset-shadow($shadow-orange, 12px); }
+    &#demo-section:hover     { @include offset-shadow($shadow-blue, 12px); }
+    &#code-section:hover     { @include offset-shadow($shadow-pink, 12px); }
 }
 
 .section-label {
@@ -61,16 +37,16 @@
     .label-shadow {
         position: absolute;
         inset: 0;
-        background-color: a.$purple;
-        border: a.$border;
+        background-color: $purple;
+        border: $border;
         transform: translate(5px, 5px);
         z-index: 0;
     }
 
     h2 {
         position: relative;
-        background-color: a.$white;
-        border: a.$border;
+        background-color: $white;
+        border: $border;
         padding: 7px 16px;
         font-weight: 900;
         font-size: 20px;
@@ -82,27 +58,24 @@
 .section-copy {
     padding: 0 20px 20px;
 
-    p,
-    li {
+    p, li {
         font-size: 14px;
         line-height: 1.8;
         margin-bottom: 10px;
 
-        @include a.tablet {
+        @include tablet {
             font-size: 15px;
         }
     }
 
-    ul {
-        margin-bottom: 12px;
-    }
+    ul { margin-bottom: 12px; }
 
     pre {
-        background-color: a.$white;
-        border: a.$border;
+        background-color: $white;
+        border: $border;
         padding: 14px 16px;
         margin-bottom: 14px;
-        box-shadow: 6px 6px 0 a.$shadow-green;
+        box-shadow: 6px 6px 0 $shadow-green;
         overflow-x: auto;
     }
 

@@ -1,11 +1,9 @@
-@use '../abstracts' as a;
-
 body {
-    font-family: a.$font;
-    color: a.$black;
+    font-family: $font;
+    color: $black;
     margin: 0;
     padding: 0;
-    background-color: a.$bg;
+    background-color: $bg;
 }
 
 h1, h2, h3, p, ul, li { 
@@ -29,7 +27,7 @@ pre {
 }
 
 code { 
-    font-family: a.$font; 
+    font-family: $font; 
     font-size: 13px; 
 }
 
