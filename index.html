@@ -4,18 +4,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>OOP Counter</title>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7COpen+Sans" rel="stylesheet" type="text/css">
+    <title>Counter Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script type="module" defer src="js/main.js"></script>
 </head>
 
 <body>
-    <div class="grid-con">
-        <div id="counter-container1" class="counter col-span-full m-col-span-6"></div>
-        <div id="counter-container2" class="counter col-span-full m-col-span-6"></div>
-        <div id="counter-container3" class="counter col-span-full m-col-span-6"></div>
-    </div>
+
+    <header id="hero">
+        <div id="hero-title-wrap">
+            <div id="hero-shadow"></div>
+            <h1 id="hero-title">COUNTER LAB</h1>
+        </div>
+    </header>
+
+    <nav id="main-nav">
+        <div id="nav-wrap">
+            <a href="#overview-section" class="nav-link active">OVERVIEW</a>
+            <a href="#works-section" class="nav-link">HOW IT WORKS</a>
+            <a href="#demo-section" class="nav-link">DEMO</a>
+            <a href="#code-section" class="nav-link">HOW TO USE IT</a>
+        </div>
+    </nav>
+
+    <main id="content-con">
+
+        <div class="grid-con">
+            <section class="doc-section col-span-full" id="overview-section">
+                <div class="section-label">
+                    <div class="label-shadow"></div>
+                    <h2>OVERVIEW</h2>
+                </div>
+                <div class="section-copy">
+                    <p>This counter is a reusable JavaScript class that controls a number inside a container. 
+                        It lets the user increment, decrement, and reset the value, but everything is handled inside 
+                        one class instead of writing the same code over and over again.</p>
+                    <p> The idea here is to avoid repeating logic every time I need a counter on a page. 
+                        Instead of manually adding event listeners and updating the UI each time, 
+                        I can just instantiate the class and it works right away.</p>
+                    <p> The counter uses object-oriented programming, where the state controls what is shown on the UI. 
+                        For example, when the count reaches 0, the decrement and reset buttons become inactive so the 
+                        user can't go below 0 or reset unnecessarily.</p>
+                    <p> I also created a StepCounter version which extends the original class. This one works the same way 
+                        but instead of increasing or decreasing by 1, it uses a custom step value. This shows how 
+                        inheritance works and how I can reuse and modify existing logic without rewriting the whole thing.</p>
+                    <p> Overall, this project is both a functional component and a documentation-style page showing 
+                        how it works and how it can be reused.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-con">
+            <section class="doc-section col-span-full" id="works-section">
+                <div class="section-label">
+                    <div class="label-shadow"></div>
+                    <h2>HOW IT WORKS</h2>
+                </div>
+                <div class="section-copy">
+                    <p>The counter works by storing a value inside the class and updating the UI based on that value.</p>
+                    <p>When the class is created, it selects the container using the selector and gets the elements inside it, 
+                        like the display and buttons. It also sets up the event listeners for increment, decrement, and reset.</p>
+                    <p>Each button triggers a method:</p>
+                    <ul>
+                        <li><strong>increment()</strong> : adds to the count</li>
+                        <li><strong>decrement()</strong> : subtracts but never goes below 0</li>
+                        <li><strong>reset()</strong> : brings back to the initial value and logs in the console</li>
+                    </ul>
+                    <p>Instead of updating everything randomly, the UI changes are handled in one place using the update() method. 
+                        This makes sure everything stays consistent.</p>
+                    <p>The update method:</p>
+                    <ul>
+                        <li>updates the displayed number</li>
+                        <li>adds or removes the inactive class on the buttons</li>
+                        <li>keeps the UI in sync with the current count</li>
+                    </ul>
+                    <p>For the StepCounter, it works the same way but it overrides the increment and decrement methods. 
+                        Instead of changing by 1, it uses a custom step value passed into the class.</p>
+                    <p>So basically:</p>
+                    <p class="mini-note">state (count) → update() → UI changes</p>
+                    <p class="mini-note">Everything depends on the value of the count.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-con">
+            <section class="doc-section col-span-full" id="demo-section">
+                <div class="section-label">
+                    <div class="label-shadow"></div>
+                    <h2>LIVE DEMO</h2>
+                </div>
+                <div class="section-copy">
+                    <p>Below are multiple instances of the counter running on the same page. 
+                        Each one is created using the same class but with different initial values (0, 10, 100, and 1000) 
+                        to show how flexible and reusable the component is.</p>
+                    <p>The first two counters (0 and 10) use the base Counter class and behave like standard counters. 
+                        They increment and decrement by 1, and cannot go below 0. The decrement and reset buttons also 
+                        become inactive when needed.</p>
+                    <p>The next two counters (100 and 1000) use the StepCounter class. 
+                        Instead of increasing or decreasing by 1, they use a custom step value, 
+                        which allows the counter to change in larger increments. This demonstrates how the original 
+                        class can be extended and modified without rewriting the entire logic.</p>
+                    <p>All counters work independently, even though they share the same underlying logic.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-con" id="demo-grid">
+            <div id="counter-container1" class="counter counter-green col-span-full m-col-span-6"></div>
+            <div id="counter-container2" class="counter counter-purple col-span-full m-col-span-6"></div>
+            <div id="counter-container3" class="counter counter-orange col-span-full m-col-span-6"></div>
+            <div id="counter-container4" class="counter counter-blue col-span-full m-col-span-6"></div>
+        </div>
+
+        <div class="grid-con">
+            <section class="doc-section col-span-full" id="code-section">
+                <div class="section-label">
+                    <div class="label-shadow"></div>
+                    <h2>HOW TO USE IT</h2>
+                </div>
+                <div class="section-copy">
+                    <p>To use the counter, I first need a container in the HTML for each instance. After that, 
+                        I instantiate the class in JavaScript and pass in the selector plus the initial value I 
+                        want the counter to start with. For the StepCounter, I also pass in a third parameter for the step value.</p>
+
+                    <h3 class="code-title">Example HTML container markup</h3>
+                    <pre><code>&lt;div id="counter-container1" class="counter col-span-full m-col-span-6"&gt;&lt;/div&gt;</code></pre>
+
+                    <h3 class="code-title">Example instantiation code</h3>
+                    <pre><code>import { Counter, StepCounter } from './counter.js';
+                        
+                        const counter1 = new Counter('#counter-container1', 0);
+                        const counter2 = new Counter('#counter-container2', 10);
+                        const counter3 = new StepCounter('#counter-container3', 100, 100);
+                        const counter4 = new StepCounter('#counter-container4', 1000, 1000);</code></pre>
+
+                    <h3 class="code-title">Parameters</h3>
+                    <ul>
+                        <li>selector: targets the counter container in the HTML</li>
+                        <li>initialValue :sets the starting value of the counter</li>
+                        <li>step : only used in StepCounter, and controls how much the value increases or decreases each time</li>
+                    </ul>
+                    <p>This makes the component reusable because I can create multiple counters with different starting values and 
+                        different behaviors without rewriting the whole logic each time.</p>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer id="main-footer">
+        <p>COUNTER LAB &nbsp;·&nbsp; CREATED BY JNDESIGNS@2026</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>gsap.registerPlugin(ScrollTrigger);</script>
+    <script type="module" src="js/gsapanimation.js"></script>
+    <script type="module" src="js/main.js"></script>
+
 </body>
 </html>
