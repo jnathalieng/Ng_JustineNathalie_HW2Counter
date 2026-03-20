@@ -1,0 +1,38 @@
+@use '../abstracts' as a;
+
+body {
+    font-family: a.$font;
+    color: a.$black;
+    margin: 0;
+    padding: 0;
+    background-color: a.$bg;
+}
+
+h1, h2, h3, p, ul, li { 
+    margin: 0; 
+    padding: 0; 
+}
+
+ul { 
+    padding-left: 20px; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+pre { 
+    margin: 0; 
+    white-space: pre-wrap; 
+    word-break: break-word; 
+}
+
+code { 
+    font-family: a.$font; 
+    font-size: 13px; 
+}
+
+strong { 
+    font-weight: 700; 
+}
