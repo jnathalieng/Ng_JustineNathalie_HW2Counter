@@ -57,8 +57,8 @@ export class Counter {
     }
 
     reset() {
-      this.count=0;
-      this.update();
+        this.count = this.initialValue;
+        this.update();
     }
 
     update () {
