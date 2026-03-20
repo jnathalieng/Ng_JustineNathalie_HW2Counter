@@ -1,0 +1,164 @@
+@use '../abstracts' as a;
+
+#hero {
+    background-color: a.$purple;
+    border-bottom: a.$border-thick;
+    padding: 50px 20px 60px;
+    @include a.flex-center;
+
+    #hero-title-wrap {
+        position: relative;
+        display: inline-block;
+
+        &:hover #hero-shadow {
+            transform: translate(12px, 12px);
+        }
+    }
+
+    #hero-shadow {
+        position: absolute;
+        inset: 0;
+        background-color: a.$blue-shadow;
+        border: a.$border-thick;
+        transform: translate(7px, 7px);
+        transition: transform 0.2s ease;
+        z-index: 0;
+    }
+
+    #hero-title {
+        position: relative;
+        background-color: a.$white;
+        border: a.$border-thick;
+        padding: 14px 36px;
+        font-weight: 900;
+        font-size: 48px;
+        letter-spacing: 1px;
+        line-height: 1;
+        z-index: 1;
+    }
+}
+
+#main-nav {
+    background-color: a.$cream;
+    border-bottom: a.$border-thick;
+    padding: 18px 20px;
+
+    #nav-wrap {
+        @include a.flex-center-horiz;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 8px 16px;
+        background-color: a.$white;
+        border: a.$border;
+        cursor: pointer;
+        transition: transform 0.14s ease, box-shadow 0.14s ease;
+
+        &:hover,
+        &.active {
+            transform: translate(-3px, -3px);
+            box-shadow: 5px 5px 0 a.$purple;
+        }
+    }
+}
+
+#demo-grid {
+    margin-bottom: 10px;
+}
+
+.counter {
+    background-color: a.$white;
+    border: a.$border;
+    padding: 24px 20px 20px;
+    margin-top: 20px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    div {
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 1;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+    }
+
+    button {
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 1px;
+        border: a.$border;
+        background-color: a.$white;
+        padding: 7px 12px;
+        margin-right: 4px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: transform 0.1s ease;
+
+        &:hover:not(.inactive) {
+            transform: translate(-1px, -1px);
+        }
+
+        &:active:not(.inactive) {
+            transform: translate(1px, 1px);
+        }
+    }
+
+    button.inactive {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    &:hover {
+        transform: translate(-3px, -3px);
+    }
+
+    &.counter-green {
+        @include a.offset-shadow(a.$shadow-green, 7px);
+
+        &:hover {
+            @include a.offset-shadow(a.$shadow-green, 10px);
+        }
+    }
+
+    &.counter-purple {
+        @include a.offset-shadow(a.$shadow-purple, 7px);
+
+        &:hover {
+            @include a.offset-shadow(a.$shadow-purple, 10px);
+        }
+    }
+
+    &.counter-orange {
+        @include a.offset-shadow(a.$shadow-orange, 7px);
+
+        &:hover {
+            @include a.offset-shadow(a.$shadow-orange, 10px);
+        }
+    }
+
+    &.counter-blue {
+        @include a.offset-shadow(a.$shadow-blue, 7px);
+
+        &:hover {
+            @include a.offset-shadow(a.$shadow-blue, 10px);
+        }
+    }
+}
+
+#main-footer {
+    background-color: a.$purple;
+    border-top: a.$border-thick;
+    padding: 28px 20px;
+    text-align: center;
+
+    p {
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
